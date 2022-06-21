@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="rus" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:insert="~{Head}">
+</head>
+<body>
+    <link th:insert="~{NavBar}">
+
+        <table class="table table-success table-striped">
+            <caption>List of users</caption>
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">SURNAME</th>
+                <th scope="col">EXAM</th>
+                <th scope="col">MARK</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            </tbody>
+        </table>
+</body>
+</html>
