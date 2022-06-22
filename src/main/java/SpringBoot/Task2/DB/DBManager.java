@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class DBManager {
     private static ArrayList<Student> students = new ArrayList<>();
-
+    private static Long id = 11L;
     static {
         students.add(new Student(1L, "Maxim", "Reshetnikov", 96, "A"));
         students.add(new Student(2L, "Stas", "Glazynov", 86, "B"));
@@ -22,5 +22,22 @@ public class DBManager {
 
     public static ArrayList getListUsers(){
         return students;
+    }
+
+    public static void addStudent(String name, String surname, int exam){
+        String newMark = "";
+        if (exam >= 90){
+            newMark = "A";
+        }else if (exam >= 75 & exam <= 89){
+            newMark = "B";
+        }else if (exam >= 60 & exam <= 74){
+            newMark = "C";
+        }else if (exam >= 50 & exam <= 59){
+            newMark = "D";
+        }else {
+            newMark = "F";
+        }
+        students.add(new Student(id, name, surname, exam, newMark));
+        id++;
     }
 }

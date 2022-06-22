@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="rus" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:insert="~{Head}">
+</head>
+<body>
+<link th:insert="~{NavBar}">
+<form class="container w-50" th:action="@{'/addStudent'}" method="post">
+    <div class="form-group my-3">
+        <label for="exampleInputEmail1">Name</label>
+        <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+               placeholder="Enter Name">
+    </div>
+    <div class="form-group my-3">
+        <label for="exampleInputEmail2">Surname</label>
+        <input name="surname" type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp1"
+               placeholder="Enter Surname">
+    </div>
+    <div class="form-group my-3">
+        <label for="exampleInputPassword1">EXAM</label>
+        <input name="exam" type="text" class="form-control" id="exampleInputPassword1" placeholder="EXAM">
+    </div>
+    <button  class="btn btn-primary my-2">Submit</button>
+</form>
+</body>
+</html>
