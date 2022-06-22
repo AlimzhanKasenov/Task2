@@ -9,7 +9,6 @@
     <link th:insert="~{NavBar}">
 
         <table class="table table-success table-striped">
-            <caption>List of users</caption>
             <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -19,14 +18,26 @@
                 <th scope="col">MARK</th>
             </tr>
             </thead>
+            <div th:each="student : ${students}">
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
+            <tr >
+                <div th:if="${student.mark.equals('F')}">
+                <th scope="row" th:text="${student.id}"></th>
+                <td class="text-success font-weight-bold" th:text="${student.name}"></td>
+                <td class="text-success font-weight-bold" th:text="${student.surname}"></td>
+                <td class="text-success font-weight-bold" th:text="${student.exam}"></td>
+                <td class="text-success font-weight-bold" th:text="${student.mark}"></td>
+                </div>
+                <div th:unless= "${student.mark.equals('F')}">
+                    <th scope="row" th:text="${student.id}"></th>
+                    <td th:text="${student.name}"></td>
+                    <td th:text="${student.surname}"></td>
+                    <td th:text="${student.exam}"></td>
+                    <td th:text="${student.mark}"></td>
+                </div>
+                </tr>
             </tbody>
+            </div>
         </table>
 </body>
 </html>
